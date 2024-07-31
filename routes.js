@@ -2,6 +2,7 @@ const express = require("express");
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
+const fs = require("fs");
 const Post = require("./post");
 
 const router = express.Router();
@@ -105,9 +106,27 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  post.deletePostById(req.params.id, (err) => {
-    if (err) return handleError(res, err, 403);
-    res.sendStatus(204);
+  post.getPostById(req.params.id, (err, postToDelete) => {
+    if (err || !postToDelete)
+      return handleError(res, new Error("Post not found"), 404);
+
+    const imagesToDelete = [
+      path.join(__dirname, postToDelete.profilepic),
+      path.join(__dirname, postToDelete.background),
+    ];
+
+    post.deletePostById(req.params.id, (err) => {
+      if (err) return handleError(res, err, 403);
+
+      // Delete the images
+      imagesToDelete.forEach((imagePath) => {
+        fs.unlink(imagePath, (err) => {
+          if (err) console.error(`Failed to delete image: ${imagePath}`, err);
+        });
+      });
+
+      res.status(200).send("Post has been deleted");
+    });
   });
 });
 
