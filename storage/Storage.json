@@ -7,7 +7,18 @@
     "author": "Clement",
     "profilepic": "/images/profilepic/ec49bb3e-18a4-4c3f-abdf-77ff01af4423.jpg",
     "background": "/images/background/4fdba2f9-bce9-4f30-a39e-7a179f6ce07a.jpg",
-    "comments": []
+    "comments": [
+      {
+        "user": "clement",
+        "text": "whatwweoaxjc",
+        "timestamp": "2024-07-31"
+      },
+      {
+        "user": "clement ",
+        "text": "i wanted to check \n",
+        "timestamp": "2024-08-01"
+      }
+    ]
   },
   {
     "id": 2,
@@ -63,6 +74,16 @@
     "author": "Clement",
     "profilepic": "/images/profilepic/fe7b5937-490b-4773-8c94-630340dc701d.jpg",
     "background": "/images/background/b9acf38f-55f7-4ff5-9bcc-9deed1b249f3.jpg",
+    "comments": []
+  },
+  {
+    "id": 7,
+    "title": "about me",
+    "description": "i have a problem that i need to fix ",
+    "content": "i have tonchange my ways of living , i have to think about tomorrow not only just today ",
+    "author": "clemnt",
+    "profilepic": "/images/profilepic/55aa9ce3-0a67-4993-a60c-413b743660ab.JPG",
+    "background": "/images/background/b4c12c64-5ea9-4742-b2a5-38c223d702a9.png",
     "comments": []
   }
 ]
